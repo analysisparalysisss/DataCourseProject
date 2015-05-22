@@ -50,14 +50,15 @@ The experiments have been carried out with a group of 30 volunteers . Each perso
 Full description of variables in the input dataset is provided in *README.txt*, *features.txt* and *features_info.txt* files which are part of the zip file.
 
 ##Data transformations
-*Train and test data is read into R
-*Use 'rbind' to merge the train and test data into new data frame *alldata*. Combine activity and subjects as well.
-*Add the column names (variables names) from the features.txt file.
-*Add subjects and activity columns and name them as "Subject" and "Activity"
-*Only measurements with names containing "mean" or  "std" (not case sensitive) are selected to extract to the sample data set. Using `grep()` to check the matching.
-*Activity descriptions for each numeric activity code are taken from *activity_labels.txt* file. Using `join()` function from `plyr` package to combine the Subjects and Activity columns from sample data (result of the previous step) with the activity description. Activity code is used to join the data, order of rows remains the same as in sample data frame.  
-*Use cbind to create the sample with the Subject, Activity description and all the measurements of mean and std.
-*Use `gsub()` to replace abbreviations with the complete descriptions for all variables:
+
+* Train and test data is read into R
+* Use 'rbind' to merge the train and test data into new data frame *alldata*. Combine activity and subjects as well.
+* Add the column names (variables names) from the features.txt file.
+* Add subjects and activity columns and name them as "Subject" and "Activity"
+* Only measurements with names containing "mean" or  "std" (not case sensitive) are selected to extract to the sample data set. Using `grep()` to check the matching.
+* Activity descriptions for each numeric activity code are taken from *activity_labels.txt* file. Using `join()` function from `plyr` package to combine the Subjects and Activity columns from sample data (result of the previous step) with the activity description. Activity code is used to join the data, order of rows remains the same as in sample data frame.  
+* Use cbind to create the sample with the Subject, Activity description and all the measurements of mean and std.
+* Use `gsub()` to replace abbreviations with the complete descriptions for all variables:
   * *t* stands for *Time*
   * *Acc* stands for *Accelerometer*
   * *Gyro* stands for *Gyroscope*
@@ -65,8 +66,8 @@ Full description of variables in the input dataset is provided in *README.txt*, 
   * *f* and *Freq* stand for *Frequency*
   * *BodyBody* is a duplicate of *Body* 
 * Extract the averages of all measurements for each Activity and Subject (using `aggregate()` function). 
-*Put columns into the right order (Subject, Activity, then all the average measurements of mean and std).
-*Write data into tidy.txt file using `write.table()` with `row.names` set to FALSE. 
+* Put columns into the right order (Subject, Activity, then all the average measurements of mean and std).
+* Write data into tidy.txt file using `write.table()` with `row.names` set to FALSE. 
 * *Tidy.txt* is the final output of the script. 
 
 ###Output data description
