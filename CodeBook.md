@@ -50,7 +50,6 @@ The experiments have been carried out with a group of 30 volunteers . Each perso
 Full description of variables in the input dataset is provided in *README.txt*, *features.txt* and *features_info.txt* files which are part of the zip file.
 
 ##Data transformations
-
 * Train and test data is read into R
 * Use 'rbind' to merge the train and test data into new data frame *alldata*. Combine activity and subjects as well.
 * Add the column names (variables names) from the features.txt file.
