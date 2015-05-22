@@ -16,7 +16,7 @@ features=read.table("features.txt")
 colnames(alldata)=features[,2]
 ##add subjects and activity columns and name them
 named_data<-cbind(subjects,activity,alldata)
-colnames(named_data)[1:2]<-c("Subjects","Activity")
+colnames(named_data)[1:2]<-c("Subject","Activity")
 
 ##2.Extract only the measurements on the mean and standard deviation for each measurement
 ##defined as measurements names containing "mean" or  "std" irrespective of case.
